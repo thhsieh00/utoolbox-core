@@ -138,8 +138,8 @@ class LatticeScopeDataset(
     def _find_settings_path(self):
         # find common prefix
         file_list = []
-        for ext in ("tif", "txt"):
-            file_list.extend(glob.glob(os.path.join(self.root_dir, f"*.{ext}")))
+        for ext in (".tif", "_Settings.txt"):
+            file_list.extend(glob.glob(os.path.join(self.root_dir, f"*{ext}")))
         prefix = os.path.commonprefix(file_list)
         # strip until ends with an underscore
         if prefix[-1] == "_":
